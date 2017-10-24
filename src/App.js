@@ -26,12 +26,12 @@ class App extends Component {
       let minutes = ('0'+ Math.floor( this.state.time/60 )).slice(-2);
       let seconds = ('0'+ this.state.time % 60).slice(-2);
 
-      //check if timer finished
+      //check if timer finished and stop it
       if (minutes === '00' && seconds === '00'){
         clearInterval(interval);
       }
 
-      //display them by updating the state 
+      //updating the state property display 
       this.setState({
         display: minutes + ':' + seconds
         // display: this.state.time
@@ -43,7 +43,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p id='timer'>{this.state.display}</p>
+        <div id='timer'>{this.state.display}</div>
+        <button>restart pomodoro</button>
       </div>
     );
   }
