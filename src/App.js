@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import bellAlias from './sounds/shipBell.wav';
 
 class App extends Component {
 
@@ -13,7 +14,7 @@ class App extends Component {
       display: 0,
       intervalId:undefined,//initially set from component mount, then custom button
       customMins: 1500,
-      sound: new Audio('shipbell.wav')
+      sound: new Audio(bellAlias)
     };
   }
 
@@ -32,12 +33,12 @@ class App extends Component {
     if (this.state.time === 0){
       //use iD here as the iD to stop the timer at end before setting id to state
       clearInterval(this.state.intervalId);
+      // console.log('current running interval id: ',this.state.intervalId);
 
       //play sound element constructed in state
       this.state.sound.play();
       // console.log(this.state.sound);
 
-      // console.log('current running interval id: ',this.state.intervalId);
     }
     //get minutes and seconds from current time. they are strings
     let minutes = ('0'+ Math.floor( this.state.time/60 )).slice(-2);
