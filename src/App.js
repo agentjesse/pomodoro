@@ -64,6 +64,7 @@ class App extends Component {
         <br />
         {/* restart button */}
         <button
+          className='customBtn'
           onClick={evt=>{
             //stop setInterval
             clearInterval(this.state.intervalId);
