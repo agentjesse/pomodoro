@@ -37,10 +37,8 @@ class App extends Component {
       this.state.sound.play();
       // console.log(this.state.sound);
 
-      //display the intervalId at zero.
       // console.log('current running interval id: ',this.state.intervalId);
     }
-
     //get minutes and seconds from current time. they are strings
     let minutes = ('0'+ Math.floor( this.state.time/60 )).slice(-2);
     let seconds = ('0'+ this.state.time % 60).slice(-2);
@@ -60,7 +58,7 @@ class App extends Component {
 
         {/* custom time input */}
         <input className='customTimeInput'
-          placeholder='enter custom minutes here'
+          placeholder='enter custom minutes...'
           onChange={ event => { this.setState({ customMins: Math.round(event.target.value * 60) }) } }
         />
         <br />
