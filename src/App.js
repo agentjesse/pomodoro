@@ -58,7 +58,7 @@ class App extends Component {
 
         {/* custom time input */}
         <input className='customTimeInput'
-          placeholder='enter custom minutes...'
+          placeholder='enter custom minutes'
           onChange={ event => { this.setState({ customMins: Math.round(event.target.value * 60) }) } }
         />
         <br />
